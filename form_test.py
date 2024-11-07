@@ -12,7 +12,7 @@ def driver():
     yield driver
     driver.quit()
 
-#Form Submission
+# Form Submission
 def test_valid_form_submission(driver):
     driver.get("http://localhost/upload//")
 
@@ -37,7 +37,7 @@ def test_valid_form_submission(driver):
     time.sleep(3)
     assert "http://localhost/upload/index.php?route=information/contact.success&language=en-gb" in driver.current_url
 
-#Form submission invalid
+# Form submission invalid
 def test_invalid_form_submission(driver):
     driver.get("http://localhost/upload//")
 
@@ -67,7 +67,7 @@ def test_invalid_form_submission(driver):
     error_message = driver.find_element(By.ID, "error-enquiry").text
     assert "Enquiry must be between 10 and 3000 characters!" in error_message
 
-#Form submission empty
+# Form submission empty
 def test_form_submission_empty(driver):
     driver.get("http://localhost/upload//")
 
